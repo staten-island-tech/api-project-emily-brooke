@@ -17,5 +17,8 @@
   },
   "browserslist": [
     "since 2017-06"
-  ]
+  ],
+  "dependencies": {
+    "genre": "^2.0.0"
+  }
 }
