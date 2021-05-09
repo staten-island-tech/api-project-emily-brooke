@@ -1,5 +1,6 @@
 const DOMSelectors = {
-  grid: document.querySelector(".movie-grid"),
+  zipcodeInput: document.getElementById("findZipcode"),
+  submitBtn: document.getElementById("submitBtn"),
 };
 
 export { DOMSelectors };
