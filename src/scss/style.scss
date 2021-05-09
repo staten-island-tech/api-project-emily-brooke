@@ -25,103 +25,47 @@ body {
 }
 
 .header {
-  font-size: 5.2rem;
-
+  font-size: 5rem;
   margin: 3rem auto;
   text-align: center;
 }
 .directions {
   margin: 1rem auto 2rem auto;
   text-align: center;
-  font-size: 3.8rem;
-}
-.movie-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  width: 60vw;
-  background-color: white;
-  margin: 1rem auto;
-  padding: 3rem auto;
-  align-items: center;
-}
-.movie-card {
-  height: 50vh;
-  width: 25vw;
-  margin: 0 auto;
-  position: relative;
-  margin: 2rem auto;
-}
-.movie-card-front {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  /* background-image: url("https://image.tmdb.org/t/p/w300/r7vmZjiyZw9rpJMQJdXpjgiCOk9.jpg"); */
-  background-position: center;
-  z-index: 3;
-  transition: all 0.3s;
-}
-.poster {
-  width: 100%;
-  height: 100%;
-}
-.movie-card-back {
-  transition: all 0.3s;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  color: white;
-  background-color: rgba(33, 33, 33, 0.8);
-  width: 100%;
-  height: 100%;
-}
-.movie-card-header {
-  font-size: 2.4rem;
-  text-transform: uppercase;
-  margin: 1rem auto;
-
-  text-align: center;
-}
-.score-box,
-.release-box {
-  text-align: center;
-}
-
-.movie-genres {
-  font-size: 1.6rem;
-  padding: 1rem 2rem;
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.movie-genre {
-  list-style: none;
-}
-.user-score {
-  font-size: 2rem;
-}
-.release-date {
-  font-size: 2rem;
-}
-
-.movie-card:hover .movie-card-front {
-  z-index: 1;
-}
-.movie-card:hover .movie-card-back {
-  z-index: 3;
-  display: flex;
-}
-.test {
-  color: black;
   font-size: 3rem;
+}
+.container-fluid {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50rem;
+  width: 50rem;
+  justify-content: center;
+  align-items: center;
+  .pic {
+    left: 70%;
+  }
+}
+
+.content {
+  text-align: center;
+}
+
+.options {
+  text-align: center;
+}
+
+input {
+  vertical-align: baseline;
+}
+
+button {
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+input,
+button {
+  border-radius: 1rem;
 }
