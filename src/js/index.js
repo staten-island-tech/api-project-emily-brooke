@@ -20,29 +20,49 @@ const init = function () {
       const response = await fetch(
         `http://api.weatherstack.com/current?access_key=f8c359893525fec83d43904a9eda906d&units=f&query=${zipcodeValue}`
       );
-      const info = await response.json();
-      console.log(info);
-      return info;
+      const data = await response.json(weatherDetails);
+      console.log(data);
+      return data;
     } catch (error) {
       console.log(error);
       alert("Hey something went wrong");
     }
   };
+  const displayData = async function () {
+    console.log(zipcodeValue);
+    let city = data.name;
+    let temperature = data.temperature;
+    let description = data.description;
 
-  const displayInfo = async function () {
-    console.log(cityValue);
+    displayWeather([city, temperature, description]);
   };
-  zipcodeValue = DOMSelectors.zipcodeInput.value;
+  document
+    .querySelector("#submitBtn")
+    .addEventListener("click", function (event) {
+      zipcodeValue = DOMSelectors.zipcodeInput.value;
+      event.preventDefault();
+      //getData();
+      // displayData();
+      zipcodeValue = DOMSelectors.zipcodeInput.value;
+      console.log(zipcodeValue);
+      const response = getData(query);
+      const currentData = response.current;
+    });
 };
-const weatherDetails = function (data) {
-  const city = data.name;
-  const temperature = data.temperature;
 
-  displayWeather([city, temperature, description()]);
-}; // description needs to be called to return the value;
+init();
 
-var displayWeather = function (input) {
-  $("h1").text(input[0]);
-  $("h2").html(input[1].celsius);
-  $("h3").text(input[2]);
+let weatherDetails = function (data) {
+  let city = data.name;
+  let temperature = data.temperature;
+  let description = data.description;
+
+  displayWeather([city, temperature, description]);
+}; // description needs to be called to return the value
+
+const displayWeather = function (input) {
+  $("h3").text(input[0]);
+  $("h4").html(input[1].fahrenheit);
+  $("h5").text(input[2]);
 };
+//$("form").submit(location.zipCode);
