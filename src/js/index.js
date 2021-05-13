@@ -27,29 +27,29 @@ const init = function () {
       console.log(error);
       alert("Hey something went wrong");
     }
-    const displayData = async function () {
-      //const response = await getData(query);
-      const city = data[0].city_name;
-      const state = data[0].state_code;
-      const temperature = data[0].temp;
-      const description = data[0].weather.description;
-      console.log(city, state, temperature, description);
-      //displayData([city, state, temperature, description]);
-      const insertData = function () {
-        //   DOMSelectors.infoBox.innerHTML = "";
-        DOMSelectors.contentArea.insertAdjacentHTML(
-          "afterbegin",
-          `<div class="info">
-                  <h3> ${city}, ${state}</h3>
-                  <p><span>Weather:</span> ${temperature} °F</p>
-                  <p><span>Description:</span>${description}</p>
-                </div>
-             </div>`
-        );
-        insertData();
-      };
+  };
+  const displayData = function (data) {
+    //const response = await getData(query);
+    //console.log(data);
+    const city = data.data[0].city_name;
+    const state = data.data[0].state_code;
+    const temperature = data.data[0].temp;
+    const description = data.data[0].weather.description;
+    console.log(city, state, temperature, description);
+    //displayData([city, state, temperature, description]);
+    const insertData = function () {
+      //   DOMSelectors.contentArea.innerHTML = "";
+      DOMSelectors.contentArea.insertAdjacentHTML(
+        "afterbegin",
+        `<div class="info">
+                <h3> ${city}, ${state}</h3>
+                <p><span>Weather:</span> ${temperature} °F</p>
+                <p><span>Description:</span>${description}</p>
+              </div>
+           </div>`
+      );
+      insertData();
     };
-    displayData();
   };
   document
     .querySelector("#submitBtn")
@@ -57,9 +57,12 @@ const init = function () {
       zipcodeValue = DOMSelectors.zipcodeInput.value;
       event.preventDefault();
       console.log(zipcodeValue);
-      getData(query);
-      //getData();
-      // displayData();
+      const infoPromise = getData(query);
+      //const info = await infoPromise;
+      //displayData(info);
+      infoPromise.then(function (info) {
+        displayData(info);
+      });
     });
 
   // let weatherDetails = function (data) {
