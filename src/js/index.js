@@ -43,8 +43,8 @@ const init = function () {
       "afterbegin",
       `<div class="info">
                   <h3> ${city}, ${state} </h3>
-                  <p><span>Weather:</span> ${temperature} °F</p>
-                  <p><span>Description:</span>${description}</p>
+                  <p><span>Weather: </span> ${temperature} °F</p>
+                  <p><span>Description: </span>${description}</p>
           </div>`
     );
     //insertData();

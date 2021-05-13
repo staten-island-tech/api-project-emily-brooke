@@ -44,7 +44,8 @@ body {
   justify-content: center;
   align-items: center;
   .pic {
-    left: 70%;
+    left: 30%;
+    position: relative;
   }
 }
 
@@ -70,5 +71,6 @@ button {
   border-radius: 1rem;
 }
 .info {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-weight: bold;
 }
