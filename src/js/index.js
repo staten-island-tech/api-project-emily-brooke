@@ -4,7 +4,7 @@ import { DOMSelectors } from "./DOM";
 const query = async function () {
   try {
     const response = await fetch(
-      `http://api.weatherstack.com/current?access_key=f8c359893525fec83d43904a9eda906d&units=f&query=${zipcodeValue}`
+      `https://api.weatherbit.io/v2.0/current?&postal_code=${zipcodeValue}&country=US&key=07c745252f5b4d0ca7cdab8e4ffcd178&units=I`
     );
   } catch (error) {
     console.log(error);
@@ -18,7 +18,7 @@ const init = function () {
   const getData = async function () {
     try {
       const response = await fetch(
-        `http://api.weatherstack.com/current?access_key=f8c359893525fec83d43904a9eda906d&units=f&query=${zipcodeValue}`
+        `https://api.weatherbit.io/v2.0/current?&postal_code=${zipcodeValue}&country=US&key=07c745252f5b4d0ca7cdab8e4ffcd178&units=I`
       );
       const data = await response.json(weatherDetails);
       console.log(data);
@@ -59,10 +59,3 @@ let weatherDetails = function (data) {
 
   displayWeather([city, temperature, description]);
 }; // description needs to be called to return the value
-
-const displayWeather = function (input) {
-  $("h3").text(input[0]);
-  $("h4").html(input[1].fahrenheit);
-  $("h5").text(input[2]);
-};
-//$("form").submit(location.zipCode);
