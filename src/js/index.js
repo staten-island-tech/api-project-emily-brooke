@@ -52,16 +52,18 @@ const init = function () {
   //};
   document
     .querySelector("#submitBtn")
-    .addEventListener("click", function (event) {
+    .addEventListener("click", async function (event) {
       zipcodeValue = DOMSelectors.zipcodeInput.value;
       event.preventDefault();
       console.log(zipcodeValue);
       const infoPromise = getData(query);
-      //const info = await infoPromise;
-      //displayData(info);
-      infoPromise.then(function (info) {
-        displayData(info);
-      });
+      const info = await infoPromise;
+      displayData(info);
+      // infoPromise.then(function (info) {
+      //   displayData(info);
+      // });
+      //waits on promise, when it gets promise back it gets info
+      //can't use await unless in async function; shut up function if you make the entire function an async function
     });
 
   // let weatherDetails = function (data) {
