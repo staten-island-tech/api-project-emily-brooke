@@ -5,16 +5,16 @@ import { DOMSelectors } from "./DOM";
 const init = function () {
   let zipcodeValue;
   const apiKey = `07c745252f5b4d0ca7cdab8e4ffcd178`;
-  const query = async function () {
-    try {
-      const response = await fetch(
-        `https://api.weatherbit.io/v2.0/current?&postal_code=${zipcodeValue}&country=US&key=07c745252f5b4d0ca7cdab8e4ffcd178&units=I`
-      );
-    } catch (error) {
-      console.log(error);
-      alert("Hey something went wrong");
-    }
-  };
+  // const query = async function () {
+  //   try {
+  //     const response = await fetch(
+  //       `https://api.weatherbit.io/v2.0/current?&postal_code=${zipcodeValue}&country=US&key=07c745252f5b4d0ca7cdab8e4ffcd178&units=I`
+  //     );
+  //   } catch (error) {
+  //     console.log(error);
+  //     alert("Hey something went wrong");
+  //   }
+  // };
   const getData = async function () {
     try {
       const response = await fetch(
@@ -31,6 +31,7 @@ const init = function () {
   const displayData = function (data) {
     //const response = await getData(query);
     //console.log(data);
+    DOMSelectors.contentArea.innerHTML = "";
     const city = data.data[0].city_name;
     const state = data.data[0].state_code;
     const temperature = data.data[0].temp;
@@ -56,7 +57,7 @@ const init = function () {
       zipcodeValue = DOMSelectors.zipcodeInput.value;
       event.preventDefault();
       console.log(zipcodeValue);
-      const infoPromise = getData(query);
+      const infoPromise = getData();
       const info = await infoPromise;
       displayData(info);
       // infoPromise.then(function (info) {
