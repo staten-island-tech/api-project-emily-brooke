@@ -40,12 +40,23 @@ const init = function () {
     //displayData([city, state, temperature, description]);
     //const insertData = function () {
     //   DOMSelectors.contentArea.innerHTML = "";
+    const response = function (displayData) {
+      if (temperature > 80) {
+        return `Sun's out, legs out. Very hot day.`;
+      } else if (temperature > 60) {
+        return `The temperature's nice, but not completely hot. You can wear shorts but it might get a bit chilly later on.`;
+      } else {
+        return `Are you insane? It's chilly out.`;
+      }
+    };
+
     DOMSelectors.contentArea.insertAdjacentHTML(
       "afterbegin",
       `<div class="info">
                   <h3> ${city}, ${state} </h3>
                   <p><span>Weather: </span> ${temperature} °F</p>
                   <p><span>Description: </span>${description}</p>
+                  <p><span>${response(displayData)}</span></p>
           </div>`
     );
     //insertData();
