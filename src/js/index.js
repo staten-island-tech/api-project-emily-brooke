@@ -25,7 +25,7 @@ const init = function () {
       return data;
     } catch (error) {
       console.log(error);
-      alert("Hey something went wrong");
+      alert("Please enter a valid ZIPCODE!!!");
     }
   };
   const displayData = function (data) {
@@ -49,7 +49,6 @@ const init = function () {
         return `Are you insane? It's chilly out.`;
       }
     };
-
     DOMSelectors.contentArea.insertAdjacentHTML(
       "afterbegin",
       `<div class="info">

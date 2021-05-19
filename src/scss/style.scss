@@ -25,16 +25,14 @@ body {
   text-align: center;
   font-weight: 700;
 }
-
 .directions {
   margin: 1rem auto 2rem auto;
   text-align: center;
   font-size: 3rem;
   font-weight: 600;
 }
-
 .container-fluid {
-  height: 100vh;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,6 +47,7 @@ body {
 .options {
   text-align: center;
   margin: 2rem auto;
+  font-size: 2rem;
 }
 
 input {
@@ -58,6 +57,7 @@ input {
 input,
 button {
   border-radius: 1rem;
+  cursor: pointer;
 }
 .info {
   font-size: 1.5rem;
