@@ -1,9 +1,5 @@
-$font-main: "Permanent Marker", cursive;
-$font-second: "Signika", sans-serif;
-$color-highlight: #aff8db;
-$background-color: #d5aaff;
-$dark-highlight: #3c456e;
-$background-visit: #ffc0cb;
+@import "_variables.scss";
+
 html,
 body {
   box-sizing: border-box;
@@ -11,12 +7,11 @@ body {
   margin: 0;
   font-size: 62.5%;
   color: white;
-  font-family: $font-second;
+  font-family: $font-main;
   font-weight: 500;
   text-shadow: $dark-highlight 2px 3px;
 }
 body {
-  background: rgb(251, 10, 10);
   background: linear-gradient(
     90deg,
     rgba(251, 10, 10, 1) 0%,
@@ -25,45 +20,39 @@ body {
 }
 
 .header {
+  margin: 1rem auto;
   font-size: 5rem;
-  margin: 3rem auto;
   text-align: center;
+  font-weight: 700;
 }
+
 .directions {
   margin: 1rem auto 2rem auto;
   text-align: center;
   font-size: 3rem;
+  font-weight: 600;
 }
+
 .container-fluid {
-  position: absolute;
-  top: 75%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 50rem;
-  width: 50rem;
-  justify-content: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  .pic {
-    left: 30%;
-    position: relative;
-  }
+  justify-content: space-evenly;
 }
 
 .content {
   text-align: center;
+  line-height: 2rem;
 }
 
 .options {
   text-align: center;
+  margin: 2rem auto;
 }
 
 input {
   vertical-align: baseline;
-}
-
-button {
-  border-radius: 0.5rem;
-  cursor: pointer;
 }
 
 input,
@@ -71,6 +60,6 @@ button {
   border-radius: 1rem;
 }
 .info {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 1.5rem;
+  //font-weight: bold;
 }
