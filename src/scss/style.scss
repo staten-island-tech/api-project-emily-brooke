@@ -12,11 +12,7 @@ body {
   text-shadow: $dark-highlight 2px 3px;
 }
 body {
-  background: linear-gradient(
-    90deg,
-    rgba(251, 10, 10, 1) 0%,
-    rgba(255, 154, 0, 1) 100%
-  );
+  background: linear-gradient(90deg, $gradient-first 0%, $gradient-second 100%);
 }
 
 .header {

@@ -31,7 +31,7 @@ body {
 }
 
 .container-fluid {
-  height: 100vh;
+  height: 50vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,6 +55,7 @@ body {
 .options {
   text-align: center;
   margin: 2rem auto;
+  font-size: 2rem;
 }
 
 input {
@@ -64,6 +65,7 @@ input {
 input,
 button {
   border-radius: 1rem;
+  cursor: pointer;
 }
 
 .info {

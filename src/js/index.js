@@ -41,9 +41,9 @@ const init = function () {
     //const insertData = function () {
     //   DOMSelectors.contentArea.innerHTML = "";
     const response = function (displayData) {
-      if (temperature > 80) {
+      if (temperature >= 75) {
         return `Sun's out, legs out. Very hot day.`;
-      } else if (temperature > 60) {
+      } else if (temperature >= 60) {
         return `The temperature's nice, but not completely hot. You can wear shorts but it might get a bit chilly later on.`;
       } else {
         return `Are you insane? It's chilly out.`;
