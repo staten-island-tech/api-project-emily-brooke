@@ -21,10 +21,16 @@ const init = function () {
         `https://api.weatherbit.io/v2.0/current?&postal_code=${zipcodeValue}&country=US&key=07c745252f5b4d0ca7cdab8e4ffcd178&units=I`
       );
       const data = await response.json();
+      if (data.error === "Invalid Parameters supplied.") {
+        alert(
+          "I can't tell you the weather if you don't enter a zipcode smh 🙄"
+        );
+      }
       console.log(data);
       return data;
     } catch (error) {
       console.log(error);
+      //console.log("hi");
       alert("Please enter a valid ZIPCODE!!!");
     }
   };
